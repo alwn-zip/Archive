@@ -26,7 +26,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 150px;
+        width: 250px;
         height: 100%;
         padding: 30px; // padding만 줄 시 박스 전체 크기가 늘어남
         box-sizing: border-box; // 박스 크기 고정한 채 안쪽만 여백
@@ -44,7 +44,7 @@
         top: 0px;
         right: 0;
         bottom: 0;
-        left: 150px;
+        left: 250px;
         overflow: hidden;
       }
       #viewer {
@@ -57,15 +57,13 @@
   </head>
   <body>
     <div id="menu">
-      <a onclick="loadHomework('Homework1')">Homework1</a>
-      <a onclick="loadHomework('Homework2')">Homework2</a>
-      <a onclick="loadHomework('Homework3')">Homework3</a>
       <a onclick="loadHomework('Dynamic_Balance')">Dynamic Balance</a>
+      <a onclick="loadHomework('Delete')">Delete, Delete, Delete</a>
     </div>
 
     <div id="stage">
       <!-- 처음 열었을 때 보여줄 과제 -->
-      <iframe id="viewer" src="Homework1/index.html"></iframe>
+      <iframe id="viewer" src="Dynamic_Balance/index.html"></iframe>
     </div>
 
     <script>
