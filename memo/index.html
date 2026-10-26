@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>ABSORB GPU Test</title>
+  <link rel="stylesheet" href="style.css"></head><body>
+<header>
+ <div class="brand">ABSORB<span style="color:#a3a298">.</span></div>
+ <label class="btn ed" id="bImg" for="file">IMAGE</label><button id="bTxt" class="ed">TEXT</button><button id="plus" title="새 천">+</button>
+ <div id="hint" class="ed">×2 DROP · ×3 BLEED<br>DRAG FLOW · HOLD DYE</div><button class="help-btn" id="helpBtn" title="인터랙션 안내">?</button>
+</header>
+<input id="file" type="file" accept="image/*">
+<div id="help"><p><b>DROP</b>두 번 클릭·탭 — 염료를 떨어뜨려 주변으로 퍼뜨려요</p><p><b>FLOW</b>드래그 — 손의 방향으로 염료를 늘리고 이동시켜요</p><p><b>BLEED</b>세 번 클릭·탭 — 염료가 여러 방향으로 번지고 섞여요</p><p><b>DYE</b>배치한 이미지·텍스트를 길게 누르기 — 천에 흡수시켜요</p><p><b>IMAGE</b>이미지를 불러오거나 Ctrl+V로 붙여넣어 배치해요</p><p><b>TEXT</b>글자를 입력해 캔버스에 배치해요</p><p><b>MOVE / SIZE</b>배치한 재료를 드래그해 이동, 모서리를 드래그해 크기 조절</p><p><b>ARCHIVE</b>휠을 아래로 — 천을 모아요 (자동 저장) · 천을 클릭해 선택하고 휠을 위로 — 펼쳐서 편집 (터치: 선택한 천을 한 번 더 탭) · <b style="min-width:0">+</b> 새 천</p><p><em>DROP · FLOW · BLEED는 배치한 재료를 DYE로 확정한 뒤에 쓸 수 있어요.</em></p></div>
+<div id="arch"></div>
+<div id="sel"><i style="left:0;top:0"></i><i style="left:100%;top:0"></i><i style="left:0;top:100%"></i><i style="left:100%;top:100%"></i></div>
+<div id="diag">booting…</div><div id="toast"></div>
+<div id="modal"><div class="box"><textarea id="ti" placeholder="단어 또는 짧은 문장"></textarea><div class="act"><button id="mc">취소</button><button class="p" id="ma">배치</button></div></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+  <script src="sketch.js"></script></body></html>
