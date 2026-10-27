@@ -291,17 +291,27 @@ body.arch #diag {
 }
 /* Shared control group: same + coordinate and guide anchor in edit/archive modes. */
 #interaction-tools {
+  --tools-text-w: 200px; /* width of the text slot; the "+" sits right at its left edge */
   position: fixed;
   top: calc(8px + env(safe-area-inset-top, 0px));
   right: 56px;
-  width: min(360px, calc(100vw - 112px));
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: 28px var(--tools-text-w);
+  column-gap: 8px;
+  align-items: start;
   margin: 0;
-  flex: none;
   z-index: 15002;
   pointer-events: none;
+}
+/* Edit hint and archive description share the same cell: same left edge, same top, so switching screens moves nothing. */
+#interaction-tools > #plus {
+  grid-column: 1;
+  grid-row: 1;
+}
+#interaction-tools > #hint,
+#interaction-tools > #arch-help {
+  grid-column: 2;
+  grid-row: 1;
 }
 #interaction-tools > * {
   pointer-events: auto;
@@ -390,9 +400,10 @@ body.arch #arch-help {
 }
 @media (max-width: 700px) {
   #interaction-tools {
+    --tools-text-w: 160px;
     right: 48px;
-    width: min(290px, calc(100vw - 120px));
-    gap: 6px;
+    grid-template-columns: 26px var(--tools-text-w);
+    column-gap: 6px;
   }
   #plus {
     flex-basis: 26px;
@@ -422,8 +433,8 @@ body.arch #arch-help {
 }
 @media (max-width: 450px) {
   #interaction-tools {
+    --tools-text-w: 138px;
     right: 45px;
-    width: calc(100vw - 112px);
   }
   #hint {
     font-size: 6.5px;
@@ -473,7 +484,7 @@ body.arch #arch-help {
   margin-left: 0;
   font-size: 10px;
   color: #73746c;
-  text-align: right;
+  text-align: left;
   line-height: 1.5;
   pointer-events: none;
 }
